@@ -1,10 +1,11 @@
-20:06:41 **** Incremental Build of configuration Debug for project Primer_Parcial_Lab1 ****
+20:39:26 **** Incremental Build of configuration Debug for project Primer_Parcial_Lab1 ****
 Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Contribuyente.o" "..\\src\\Contribuyente.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Recaudaciones.o" "..\\src\\Recaudaciones.c" 
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Primer_Parcial_Lab1.o" "..\\src\\Primer_Parcial_Lab1.c" 
 ..\src\Primer_Parcial_Lab1.c: In function 'main':
 ..\src\Primer_Parcial_Lab1.c:22:6: warning: unused variable 'flagAtlaR' [-Wunused-variable]
   int flagAtlaR = 0;
       ^~~~~~~~~
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Contribuyente.o" "..\\src\\Contribuyente.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Recaudaciones.o" "..\\src\\Recaudaciones.c" 
 gcc -o Primer_Parcial_Lab1.exe "src\\Contribuyente.o" "src\\Primer_Parcial_Lab1.o" "src\\Recaudaciones.o" "src\\utn.o" 
+Info: Nothing to build for Primer_Parcial_Lab1

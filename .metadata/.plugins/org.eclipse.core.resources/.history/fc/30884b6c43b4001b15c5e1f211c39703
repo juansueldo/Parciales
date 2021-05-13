@@ -100,7 +100,7 @@ void eContribuyente_mostrarUno (eContribuyente arrayContribuyentes[],int tamanio
 {
 	utn_getMayusMin (arrayContribuyentes[tamanio].nombre, MAX_CHARS_CADENAS);
 	utn_getMayusMin (arrayContribuyentes[tamanio].apellido, MAX_CHARS_CADENAS);
-	printf("\n%5d %15s     %15s         %15s    "
+	printf("\n%5d %15s     %15ss         %15s    "
 			,arrayContribuyentes[tamanio].idContribuyente
 			,arrayContribuyentes[tamanio].nombre
 			,arrayContribuyentes[tamanio].apellido
@@ -179,7 +179,7 @@ int eContribuyente_modificar (eContribuyente arrayContribuyentes[], int tamanio)
 
 			while (eContribuyente_buscarId(arrayContribuyentes, tamanio, idContribuyente) == -1)
 			{
-				printf("NO EXISTE ID. REINGRESE EL ID DEL CONTRIBUYENTE:");
+				printf("NO EXISTE ID. REINGRESE EL ID DEL CONTRIBULLENTE:");
 				scanf("%d",&idContribuyente);
 			}
 
@@ -190,9 +190,9 @@ int eContribuyente_modificar (eContribuyente arrayContribuyentes[], int tamanio)
 			printf("\n*****************************************************************\n");
 			printf("Ingrese:");
 			scanf("%d",&auxMod);
-			if(utn_getRespuesta ("\nDESEA MODIFICAR EL CONTRIBUYENYE  [S] SI [N] NO: ","\nERROR. DESEA MODIFICAR EL CONTRIBUYENYE  [S] SI [N] NO ", 3)==0)
+			if(utn_getRespuesta ("\nDESEA MODIFICAR EL CONTRIBUYENYE  [S] SI [N] NO : ","\nERROR. DESEA MODIFICAR EL CONTRIBUYENYE  [S] SI [N] NO ", 3)==0)
 			{
-			auxContribuyente = eContribuyente_modificarUno(arrayContribuyentes[index],auxMod);
+			auxContribuyente = auxContribuyente(arrayContribuyentes[index],auxMod);
 			arrayContribuyentes[index] = auxContribuyente;
 			rtn = 0;
 			}
@@ -224,7 +224,7 @@ int eContribuyente_baja (eContribuyente arrayContribuyentes[], int tamanio)
 			scanf("%d",&idContribuyente);
 		}
 		index = eContribuyente_buscarId(arrayContribuyentes, tamanio, idContribuyente);
-		if(utn_getRespuesta ("\nDESEA DAR DE BAJA EL CONTRIBUYENYE  [S] SI [N] NO:  ","\nERROR. DESEA DAR DE BAJA EL CONTRIBUYENYE  [S] SI [N] NO:", 3)==0)
+		if(utn_getRespuesta ("\nDesea dar la baja el empleado? (si 's' o NO 'no'): ","\nError. Ingrese (SI 's' o NO 'n')", 3)==0)
 		{
 			arrayContribuyentes[index].isEmpty = 1;
 			rtn = 0;

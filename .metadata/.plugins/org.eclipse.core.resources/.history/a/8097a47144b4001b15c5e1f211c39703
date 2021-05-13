@@ -100,7 +100,7 @@ void eContribuyente_mostrarUno (eContribuyente arrayContribuyentes[],int tamanio
 {
 	utn_getMayusMin (arrayContribuyentes[tamanio].nombre, MAX_CHARS_CADENAS);
 	utn_getMayusMin (arrayContribuyentes[tamanio].apellido, MAX_CHARS_CADENAS);
-	printf("\n%5d %15s     %15s         %15s    "
+	printf("\n%5d %15s     %15ss         %15s    "
 			,arrayContribuyentes[tamanio].idContribuyente
 			,arrayContribuyentes[tamanio].nombre
 			,arrayContribuyentes[tamanio].apellido
@@ -192,7 +192,7 @@ int eContribuyente_modificar (eContribuyente arrayContribuyentes[], int tamanio)
 			scanf("%d",&auxMod);
 			if(utn_getRespuesta ("\nDESEA MODIFICAR EL CONTRIBUYENYE  [S] SI [N] NO: ","\nERROR. DESEA MODIFICAR EL CONTRIBUYENYE  [S] SI [N] NO ", 3)==0)
 			{
-			auxContribuyente = eContribuyente_modificarUno(arrayContribuyentes[index],auxMod);
+			auxContribuyente = eContribuyente_buscarId(arrayContribuyentes[index],auxMod);
 			arrayContribuyentes[index] = auxContribuyente;
 			rtn = 0;
 			}

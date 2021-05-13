@@ -26,11 +26,5 @@ int eContribuyente_buscarLibre (eContribuyente arrayContribuyentes[],int tam);
 int eContribuyente_buscarId (eContribuyente arrayContribuyentes[],int tam,int id);
 eContribuyente eContribuyente_cargarPantalla (void);
 int eContribuyente_alta (eContribuyente arrayContribuyentes[], int tam, int *pIdContador);
-int eContribuyente_baja (eContribuyente arrayContribuyentes[], int tamanio);
-int eContribuyente_modificar (eContribuyente arrayContribuyentes[], int tamanio);
-eContribuyente eContribuyente_modificarUno (eContribuyente arrayContribuyentes, int campoModificar);
-int eContribuyente_mostrarTodos (eContribuyente arrayContribuyentes[],int tamanio);
-void eContribuyente_mostrarUno (eContribuyente arrayContribuyentes[],int tamanio);
-
 
 #endif /* CONTRIBUYENTE_H_ */

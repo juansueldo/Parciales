@@ -100,7 +100,7 @@ void eContribuyente_mostrarUno (eContribuyente arrayContribuyentes[],int tamanio
 {
 	utn_getMayusMin (arrayContribuyentes[tamanio].nombre, MAX_CHARS_CADENAS);
 	utn_getMayusMin (arrayContribuyentes[tamanio].apellido, MAX_CHARS_CADENAS);
-	printf("\n%5d %15s     %15s         %15s    "
+	printf("\n%5d %15s     %15ss         %15s    "
 			,arrayContribuyentes[tamanio].idContribuyente
 			,arrayContribuyentes[tamanio].nombre
 			,arrayContribuyentes[tamanio].apellido

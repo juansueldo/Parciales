@@ -34,7 +34,7 @@ int main()
 
 	do
 	{
-		utn_menu(&opcion, "\nMenu\n1. ALTA COTRIBUYENTE \n2. MODIFICAR CONTRIBUYENTE \n3. BAJA CONTRIBUYENTE \n4. ALTA RECAUDADACIONES\n10. Salir \n Ingrese:", "\nNO ES VALIDO\n", 1, 10,10);
+		utn_menu(&opcion, "\nMenu\n1. ALTA COTRIBUYENTE \n4. ALTA RECAUDADACIONES\n10. Salir \n Ingrese:", "\nNO ES VALIDO\n", 1, 10,10);
 
 		switch (opcion)
 		{
@@ -52,31 +52,10 @@ int main()
 			system("pause");
 			break;
 		case 2:
-			if(flagAlta == 1)
-			{
-				if(eContribuyente_modificar(arrayContribuyentes, MAX) ==0)
-				{
-					printf("\nSE MODIFICO EL CONTRIBUYENTE");
-				}
-				else
-				{
-					printf("\nNO SE MODIFICO EL CONTRIBUYENTE");
-				}
-			}
+
 			system("pause");
 			break;
 		case 3:
-			if(flagAlta == 1)
-			{
-			if(eContribuyente_baja(arrayContribuyentes, MAX) ==0)
-			{
-				printf("\nSE DIO LA BAJA DEL CONTRIBUYENTE");
-			}
-			else
-			{
-				printf("\nNO SE DIO LA BAJA");
-			}
-		}
 
 			system("pause");
 			break;
