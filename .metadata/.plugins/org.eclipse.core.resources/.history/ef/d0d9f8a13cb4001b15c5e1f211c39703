@@ -1,0 +1,20 @@
+
+#ifndef RECAUDACIONES_H_
+#define RECAUDACIONES_H_
+
+#include "Contribuyente.h"
+
+typedef struct {
+	int idContribuyente;
+	char mes [MAX_CHARS_CADENAS];
+	int idTipo;
+	int idRecaudacion;
+	int isEmpty;
+} eRecaudacion;
+
+/*Se pedirán los siguientes datos: ID
+de contribuyente, mes, tipo (1-ARBA, 2-IIBB, 3-GANANCIAS) e importe. Se generará
+automáticamente un identificador numérico (comenzando en 100) para la recaudación y se
+imprimirá en pantalla.
+*/
+#endif /* RECAUDACIONES_H_ */

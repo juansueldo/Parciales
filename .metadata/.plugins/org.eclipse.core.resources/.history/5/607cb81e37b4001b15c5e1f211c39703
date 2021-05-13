@@ -1,0 +1,23 @@
+#include "Contribuyente.h"
+
+int eContribuyentes_inicializar (eContribuyentes arrayContribuyentes[],int tam)
+{
+	int i;
+	int ret;
+	ret = -1;
+	if(arrayContribuyentes != NULL && tam >0)
+	{
+
+		for (i = 0; i < tam; ++i)
+		{
+			arrayContribuyentes[i].idPantalla = 0;
+			strcpy(arrayContribuyentes[i].nombre," ");
+			arrayContribuyentes[i].codigo = 0;
+			arrayContribuyentes[i].precio = 0;
+			arrayContribuyentes[i].isEmpty=1;
+		}
+		ret = 0;
+	}
+	return ret;
+}
+

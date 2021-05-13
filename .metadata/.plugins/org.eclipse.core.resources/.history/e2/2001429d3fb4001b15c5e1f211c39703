@@ -1,0 +1,36 @@
+
+#ifndef RECAUDACIONES_H_
+#define RECAUDACIONES_H_
+
+#include "Contribuyente.h"
+#define ARBA 1
+#define IIBB 2
+#define GANANCIAS 3
+
+typedef struct {
+	int idContribuyente;
+	char mes [MAX_CHARS_CADENAS];
+	int idTipo;
+	int idRecaudacion;
+	int isEmpty;
+} eRecaudacion;
+
+typedef struct {
+	int idTipo;
+	char descripcion[MAX_CHARS_CADENAS];
+} eTipo;
+
+int eRecaudacion_inicializar (eRecaudacion arrayRecaudacion[],int tam);
+int eTipo_inicializar (eTipo arrayTipo[],int cant);
+int eRecaudacion_obtenerNombre (eTipo arrayTipo[],int cant,int tipo,char detalle[20]);
+int eRecaudacion_buscarLibre (eRecaudacion arrayRecaudacion[],int tam);
+int eRecaudacion_buscarId (eRecaudacion arrayRecaudacion[],int tam,int id);
+eRecaudacion eRecaudacion_cargarPantalla (void);
+int eRecaudacion_alta (eRecaudacion arrayRecaudacion[], int tam, int *pIdContador);
+
+/*Se pedirán los siguientes datos: ID
+de contribuyente, mes, tipo (1-ARBA, 2-IIBB, 3-GANANCIAS) e importe. Se generará
+automáticamente un identificador numérico (comenzando en 100) para la recaudación y se
+imprimirá en pantalla.
+*/
+#endif /* RECAUDACIONES_H_ */

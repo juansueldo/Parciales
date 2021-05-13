@@ -1,0 +1,22 @@
+#include "Contribuyente.h"
+
+int eContribuyente_inicializar (eContribuyente arrayContribuyentes[],int tam)
+{
+	int i;
+	int rtn = -1;
+	if(arrayContribuyentes != NULL && tam >0)
+	{
+
+		for (i = 0; i < tam; ++i)
+		{
+			strcpy(arrayContribuyentes[i].nombre," ");
+			strcpy(arrayContribuyentes[i].apellido," ");
+			strcpy(arrayContribuyentes[i].cuil," ");
+			arrayContribuyentes[i].idContribuyente = 0;
+			arrayContribuyentes[i].isEmpty=1;
+		}
+		rtn = 0;
+	}
+	return rtn;
+}
+

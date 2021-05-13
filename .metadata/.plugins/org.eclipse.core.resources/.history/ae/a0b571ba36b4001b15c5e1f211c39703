@@ -1,0 +1,31 @@
+
+
+#ifndef CONTRIBUYENTE_H_
+#define CONTRIBUYENTE_H_
+
+#include "utn.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX_CHARS_CADENAS 30
+
+#define LIBRE 1
+#define OCUPADO 0
+#define BAJA -1
+
+#define LCD 1
+#define LED 2
+#define MAX 1000
+#define CANT 20
+
+typedef struct {
+	char nombre [MAX_CHARS_CADENAS];
+	char apellido [MAX_CHARS_CADENAS]
+	int idContribuyente;
+	char cuil [MAX_CHARS_CADENAS];
+	int isEmpty;
+} eContribuyente;
+
+
+#endif /* CONTRIBUYENTE_H_ */

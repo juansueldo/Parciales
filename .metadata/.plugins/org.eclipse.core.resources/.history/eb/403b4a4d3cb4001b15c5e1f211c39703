@@ -1,0 +1,15 @@
+
+#ifndef RECAUDACIONES_H_
+#define RECAUDACIONES_H_
+
+#include "Contribuyente.h"
+
+typedef struct {
+	char nombre [MAX_CHARS_CADENAS];
+	char apellido [MAX_CHARS_CADENAS];
+	int idContribuyente;
+	char cuil [14];
+	int isEmpty;
+} eRecaudacion;
+
+#endif /* RECAUDACIONES_H_ */
