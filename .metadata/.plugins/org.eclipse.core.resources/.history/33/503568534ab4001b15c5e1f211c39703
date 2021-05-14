@@ -13,7 +13,6 @@ int eRecaudacion_inicializar (eRecaudacion arrayRecaudacion[],int tam)
 			arrayRecaudacion[i].idTipo = 0;
 			arrayRecaudacion[i].idRecaudacion = 0;
 			arrayRecaudacion[i].idEstado = 0;
-			arrayRecaudacion[i].importe = 0;
 			arrayRecaudacion[i].isEmpty=1;
 		}
 		rtn = 0;
@@ -162,10 +161,7 @@ eRecaudacion eRecaudacion_cargarPantalla (void)
 		{
 			printf("\n ERROR NO SE INGRESO EL TIPO");
 		}
-		if(utn_getFloat(&auxiliar.importe,"\nINGRESE EL IMPORTE [DEL 100 AL 9999999]; ","\nERROR. INGRESE EL IMPORTE [DEL 100 AL 9999999]; ",100,999999,3) !=0)
-		{
-			printf("\nERROR NO SE INGRESO EL IMPORTE");
-		}
+
 	return auxiliar;
 }
 int eRecaudacion_alta (eRecaudacion arrayRecaudacion[], int tam, int *pIdContador)
@@ -193,12 +189,54 @@ int eRecaudacion_alta (eRecaudacion arrayRecaudacion[], int tam, int *pIdContado
 
 	return rtn;
 }
-void eRecaudacion_mostrarUno (eRecaudacion arrayRecaudacion[],int tamanio, eTipo arrayTipo[], int cant)
+int eRecaudacion_estado (eRecaudacion arrayRecaudacion[], int tamanio)
 {
-	char detalle[30];
-	eRecaudacion_obtenerNombre (arrayTipo,cant,arrayRecaudacion[tamanio].idTipo,detalle);
-	utn_getMayusMin (arrayRecaudacion[tamanio].mes, MAX_CHARS_CADENAS);
-	printf("\n%5d       %15s        "
-			,arrayRecaudacion[tamanio].idRecaudacion
-			,detalle);
+	int rtn = -1;
+
+	return rtn;
 }
+int eRecaudacion_modificar (eRecaudacion arrayRecaudacion[], int tamanio)
+{
+		int rtn = -1;
+		int idContribuyente;
+		int index;
+		int flag = 0;
+		int auxMod;
+		eRecaudacion auxRecaudacion;
+
+		if (eRecaudacion_mostrarTodos(arrayRecaudacion, tamanio) == 0)
+		{
+			flag = 1;
+		}
+
+		if (flag) {
+			printf("\n*****************************************************************\n");
+			printf("INGRESE EL ID DEL CONTRIBUYENTE A MODIFICAR: ");
+			scanf("%d",&idContribuyente);
+
+			while (eRecaudacion_buscarId(arrayRecaudacion, tamanio, idContribuyente) == -1)
+			{
+				printf("NO EXISTE ID. REINGRESE EL ID DEL CONTRIBUYENTE:");
+				scanf("%d",&idContribuyente);
+			}
+
+
+			index = eRecaudacion_buscarId(arrayRecaudacion, tamanio, idContribuyente);
+			printf("\n*****************************************************************\n");
+			printf("INGRESE EL CAMPOR A MODIFICAR: \n1. NOMBRE \n2. APELLIDO \n3. CUIL \n");
+			printf("\n*****************************************************************\n");
+			printf("Ingrese:");
+			scanf("%d",&auxMod);
+			if(utn_getRespuesta ("\nDESEA MODIFICAR EL CONTRIBUYENYE  [S] SI [N] NO: ","\nERROR. DESEA MODIFICAR EL CONTRIBUYENYE  [S] SI [N] NO ", 3)==0)
+			{
+			auxRecaudacion = eRecaudacion_modificarUno(arrayRecaudacion[index],auxMod);
+			arrayRecaudacion[index] = auxRecaudacion;
+			rtn = 0;
+			}
+
+		}
+
+		return rtn;
+}
+
+

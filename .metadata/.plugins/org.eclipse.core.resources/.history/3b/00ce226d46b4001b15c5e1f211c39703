@@ -13,7 +13,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-
+int Validate_OnlyNumberInt(char *pData);
+int Validate_OnlyNumberFloat(char *pData);
+int Validate_OnlyAlphabet(char *pData);
+int Validate_OnlyAlphabetWithSpaces(char *pData);
 int getInt(char mensaje[]);
 void utn_getNumber(int* pNumero,char* mensaje,char* mensajeError,int minimo,int maximo,int reintentos);
 int utn_getChar(char* caracter,char* mensaje,char* errorMensaje,char min,char max,int intentos);

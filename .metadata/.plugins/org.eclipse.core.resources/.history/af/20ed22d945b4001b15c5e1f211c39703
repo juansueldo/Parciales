@@ -19,26 +19,17 @@ int main()
 
 	int opcion;
 	int flagAlta = 0;
-
+	int flagAtlaR = 0;
 	int contIdContribuyente = 1000;
-	int contIdRecaudaciones = 100;
+	int contIdRecaudaciones = 1000;
 
 
 	eContribuyente arrayContribuyentes[MAX];
 	eRecaudacion arrayRecaudadores [CANT];
-	eTipo arrayTipo[CANT_TIPO];
+
 
     eContribuyente_inicializar(arrayContribuyentes, MAX);
     eRecaudacion_inicializar(arrayRecaudadores, CANT);
-
-    strcpy(arrayTipo[0].descripcion,"ARBA");
-   	arrayTipo[0].idTipo = ARBA;
-
-   	strcpy(arrayTipo[1].descripcion,"IIBB");
-   	arrayTipo[1].idTipo = IIBB;
-
-   	strcpy(arrayTipo[2].descripcion,"GANANCIAS");
-   	arrayTipo[2].idTipo = GANANCIAS;
 
 
 	do

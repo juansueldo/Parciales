@@ -37,9 +37,6 @@ int eRecaudacion_buscarId (eRecaudacion arrayRecaudacion[],int tam,int id);
 eRecaudacion eRecaudacion_cargarPantalla (void);
 int eRecaudacion_alta (eRecaudacion arrayRecaudacion[], int tam, int *pIdContador);
 int eRecaudacion_modificar (eRecaudacion arrayRecaudacion[], int tamanio);
-int eRecaudacion_modificar (eRecaudacion arrayRecaudacion[], int tamanio);
-int eRecaudacion_mostrarTodos (eRecaudacion arrayRecaudacion[],int tamanio);
-void eRecaudacion_mostrarUno (eRecaudacion arrayRecaudacion[],int tamanio, eTipo arrayTipo[], int cant);
 /*Se pedirán los siguientes datos: ID
 de contribuyente, mes, tipo (1-ARBA, 2-IIBB, 3-GANANCIAS) e importe. Se generará
 automáticamente un identificador numérico (comenzando en 100) para la recaudación y se

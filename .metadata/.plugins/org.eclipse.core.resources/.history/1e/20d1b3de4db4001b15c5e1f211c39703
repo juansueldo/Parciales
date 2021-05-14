@@ -19,7 +19,7 @@ int main()
 
 	int opcion;
 	int flagAlta = 0;
-
+	int flagAtlaR = 0;
 	int contIdContribuyente = 1000;
 	int contIdRecaudaciones = 100;
 

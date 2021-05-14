@@ -202,3 +202,83 @@ void eRecaudacion_mostrarUno (eRecaudacion arrayRecaudacion[],int tamanio, eTipo
 			,arrayRecaudacion[tamanio].idRecaudacion
 			,detalle);
 }
+int eRecaudacion_mostrarTodos (eRecaudacion arrayRecaudacion[],int tamanio)
+{
+	int i;
+	int rtn = -1;
+	if(arrayRecaudacion != NULL && tamanio > 0)
+	{
+		printf("\n*************************************************************\n");
+		printf("\n ID    NOMBRE           APELLIDO               CUIL       ");
+		printf("\n**************************************************************\n");
+		for (i = 0; i < tamanio; ++i)
+		{
+
+			if(arrayRecaudacion[i].isEmpty == 0)
+			{
+				eRecaudacion_mostrarUno(arrayRecaudacion,i);
+			}
+		}
+		rtn = 0;
+	}
+	return rtn;
+}
+int eRecaudacion_estado (eRecaudacion arrayRecaudacion[], int tamanio)
+{
+	eRecaudacion auxiliar;
+	int rtn = -1;
+	if(utn_getNumero(&auxiliar.idEstado,"\nINGRESE EL ESTADO [1] REFINANCIAR [2] SALDADO: ","\nERROR.eRecaudacion",1,2,3) != 0)
+	{
+		printf("\n ERROR NO SE INGRESO EL TIPO");
+	}
+	else
+	{
+		rtn = 0;
+	}
+	return rtn;
+}
+int eRecaudacion_modificar (eRecaudacion arrayRecaudacion[], int tamanio)
+{
+		int rtn = -1;
+		int idContribuyente;
+		int index;
+		int flag = 0;
+		int auxMod;
+		eRecaudacion auxRecaudacion;
+
+		if (eRecaudacion_mostrarTodos(arrayRecaudacion, tamanio) == 0)
+		{
+			flag = 1;
+		}
+
+		if (flag) {
+			printf("\n*****************************************************************\n");
+			printf("INGRESE EL ID DEL CONTRIBUYENTE A MODIFICAR: ");
+			scanf("%d",&idContribuyente);
+
+			while (eRecaudacion_buscarId(arrayRecaudacion, tamanio, idContribuyente) == -1)
+			{
+				printf("NO EXISTE ID. REINGRESE EL ID DEL CONTRIBUYENTE:");
+				scanf("%d",&idContribuyente);
+			}
+
+
+			index = eRecaudacion_buscarId(arrayRecaudacion, tamanio, idContribuyente);
+			printf("\n*****************************************************************\n");
+			printf("INGRESE EL CAMPOR A MODIFICAR: \n1. NOMBRE \n2. APELLIDO \n3. CUIL \n");
+			printf("\n*****************************************************************\n");
+			printf("Ingrese:");
+			scanf("%d",&auxMod);
+			if(utn_getRespuesta ("\nDESEA MODIFICAR EL CONTRIBUYENYE  [S] SI [N] NO: ","\nERROR. DESEA MODIFICAR EL CONTRIBUYENYE  [S] SI [N] NO ", 3)==0)
+			{
+			auxRecaudacion = eRecaudacion_modificarUno(arrayRecaudacion[index],auxMod);
+			arrayRecaudacion[index] = auxRecaudacion;
+			rtn = 0;
+			}
+
+		}
+
+		return rtn;
+}
+
+
